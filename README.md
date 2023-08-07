@@ -1,6 +1,8 @@
 # Inheritance
 An exploration of solving the problems that inheritance solves, without inheritance.
 
+*Disclaimer: This is not production code, and errors are not handled gracefully. Do not use this in production.*
+
 OOP developers, like myself quite recently, may struggle to understand how to structure their code
 without inheritance in Rust. This repository provides a simple, bare bones example of one approach,
 identifying the three problems that inheritance traditionally solves, and solving them separately.
