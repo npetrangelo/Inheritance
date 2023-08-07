@@ -61,7 +61,6 @@ impl Shape for Shapes {
 }
 
 fn main() {
-    println!("Hello, world!");
     let shapes = vec!(Shapes::Triangle(Triangle::new()), Shapes::Rectangle(Rectangle::new()), Shapes::Unknown(Box::new(Circle::new())));
     println!("The perimeter of the shape is {:?}", shapes[0].perimeter());
 }
