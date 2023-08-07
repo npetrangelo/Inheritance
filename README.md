@@ -3,7 +3,7 @@ An exploration of achieving solving the problems that inheritance solves, withou
 
 OOP developers, like myself quite recently, may struggle to understand how to structure their code
 without inheritance in Rust. This repository provides a simple, bare bones example of one approach,
-identifying the three problems that inheritance traditionally solves, and solving them differently.
+identifying the three problems that inheritance traditionally solves, and solving them separately.
 
 ### Sharing a common interface
 OOP developers are familiar with interfaces so I will not dwell on this too much, but Rust achieves
