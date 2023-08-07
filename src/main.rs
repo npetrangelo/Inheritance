@@ -1,7 +1,7 @@
-mod Triangle;
-mod Rectangle;
-mod Pentagon;
-mod Circle;
+mod triangle;
+mod rectangle;
+mod pentagon;
+mod circle;
 
 use std::ops::Sub;
 
@@ -38,13 +38,13 @@ trait Shape {
 }
 
 enum Shapes {
-    Triangle(Triangle::Triangle),
-    Rectangle(Rectangle::Rectangle),
-    Pentagon(Pentagon::Pentagon),
+    Triangle(triangle::Triangle),
+    Rectangle(rectangle::Rectangle),
+    Pentagon(pentagon::Pentagon),
     Unknown(Box<dyn Shape>)
 }
 
 fn main() {
     println!("Hello, world!");
-    let shapes = vec!(Shapes::Triangle(Triangle::Triangle::new()), Shapes::Rectangle(Rectangle::Rectangle::new()), Shapes::Unknown(Box::new(Circle::Circle::new())));
+    let shapes = vec!(Shapes::Triangle(triangle::Triangle::new()), Shapes::Rectangle(rectangle::Rectangle::new()), Shapes::Unknown(Box::new(circle::Circle::new())));
 }
