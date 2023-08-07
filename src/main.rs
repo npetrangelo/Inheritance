@@ -15,7 +15,7 @@ mod utils {
 
     fn dist(v1: &Vertex, v2: &Vertex) -> f32 {
         let Vertex(x, y) = v1 - v2;
-        ((x + y) as f32).sqrt()
+        ((x*x + y*y) as f32).sqrt()
     }
 
     pub fn perimeter(vertices: &[Vertex]) -> f32 {
@@ -49,7 +49,19 @@ enum Shapes {
     Unknown(Box<dyn Shape>)
 }
 
+impl Shape for Shapes {
+    fn perimeter(&self) -> f32 {
+        match self {
+            Shapes::Triangle(t) => {t.perimeter()}
+            Shapes::Rectangle(r) => {r.perimeter()}
+            Shapes::Pentagon(p) => {p.perimeter()}
+            Shapes::Unknown(u) => {u.perimeter()}
+        }
+    }
+}
+
 fn main() {
     println!("Hello, world!");
     let shapes = vec!(Shapes::Triangle(Triangle::new()), Shapes::Rectangle(Rectangle::new()), Shapes::Unknown(Box::new(Circle::new())));
+    println!("The perimeter of the shape is {:?}", shapes[0].perimeter());
 }
