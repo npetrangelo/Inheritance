@@ -81,6 +81,8 @@ be included in the collection through the `Unknown` variant, as a `dyn` type tra
 ```rust
 fn main() {
     let shapes = vec!(Shapes::Triangle(Triangle::new()), Shapes::Rectangle(Rectangle::new()), Shapes::Unknown(Box::new(Circle::new())));
-    println!("The perimeter of the shape is {:?}", shapes[0].perimeter());
+    for shape in shapes {
+        println!("The perimeter of the shape is {:?}", shape.perimeter());
+    }
 }
 ```
