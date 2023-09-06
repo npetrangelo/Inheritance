@@ -51,16 +51,19 @@ enum Shapes {
 
 impl Shape for Shapes {
     fn perimeter(&self) -> f32 {
+        use Shapes as S;
         match self {
-            Shapes::Triangle(t) => {t.perimeter()}
-            Shapes::Rectangle(r) => {r.perimeter()}
-            Shapes::Pentagon(p) => {p.perimeter()}
-            Shapes::Unknown(u) => {u.perimeter()}
+            S::Triangle(t) => {t.perimeter()}
+            S::Rectangle(r) => {r.perimeter()}
+            S::Pentagon(p) => {p.perimeter()}
+            S::Unknown(u) => {u.perimeter()}
         }
     }
 }
 
 fn main() {
     let shapes = vec!(Shapes::Triangle(Triangle::new()), Shapes::Rectangle(Rectangle::new()), Shapes::Unknown(Box::new(Circle::new())));
-    println!("The perimeter of the shape is {:?}", shapes[0].perimeter());
+    for shape in shapes {
+        println!("The perimeter of the shape is {:?}", shape.perimeter());
+    }
 }
