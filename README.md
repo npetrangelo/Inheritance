@@ -4,11 +4,11 @@ An exploration of solving the problems that inheritance solves, without inherita
 *Disclaimer: This is not production code, and errors are not handled gracefully. Do not use this in production.*
 
 OOP developers, like myself quite recently, may struggle to understand how to structure their code
-without inheritance in Rust. This repository provides a simple, bare bones example of one approach,
+without inheritance in Rust. This repository provides a simple, bare-bones example of one approach,
 identifying the three problems that inheritance traditionally solves, and solving them separately.
 
 ### Sharing a common interface
-OOP developers are familiar with interfaces so I will not dwell on this too much, but Rust achieves
+OOP developers are familiar with interfaces, so I will not dwell on this too much, but Rust achieves
 this functionality with its trait system.
 ```rust
 trait Shape {
@@ -22,7 +22,7 @@ In this repository, code reuse is achieved using functions, which have first cla
 function is defined once in the `utils` module, and used in multiple of the `Shape` implementations.
 ```rust
 mod utils {
-    pub fn perimeter(vertices: &[Vertex]) -> f32 { ... }
+    pub fn perimeter(vertices: &[Vertex]) -> f32 { 0 }
 }
 ```
 ```rust
